@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "SIAKAD-X",
+  "version": "0.2.0",
+  "description": "Modernisasi menyeluruh Attendance Unand dengan dashboard akademik, laporan kehadiran, dan bimbingan yang aman.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://attendance.unand.ac.id/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://attendance.unand.ac.id/*"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "css": [
+        "src/styles/attendance-unand.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "SIAKAD-X",
+    "default_icon": {
+      "16": "public/icons/icon-16.png",
+      "32": "public/icons/icon-32.png",
+      "48": "public/icons/icon-48.png",
+      "128": "public/icons/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "32": "public/icons/icon-32.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/styles/*",
+        "public/icons/*",
+        "assets/*"
+      ],
+      "matches": [
+        "https://attendance.unand.ac.id/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

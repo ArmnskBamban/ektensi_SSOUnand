@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pengaturan SIAKAD-X</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="options">
+      <header class="options__header">
+        <h1>Pengaturan SIAKAD-X</h1>
+        <p>Universitas Andalas · Data diproses secara lokal di perangkat Anda</p>
+      </header>
+
+      <main class="options__main">
+        <section class="options__card">
+          <h2>Umum</h2>
+          <label class="options__field">
+            <span>Aktifkan SIAKAD-X</span>
+            <input type="checkbox" id="enabled" />
+          </label>
+          <label class="options__field">
+            <span>Portal Attendance Unand</span>
+            <input type="checkbox" id="portal-attendance" />
+          </label>
+          <label class="options__field">
+            <span>Mode debug (log di konsol)</span>
+            <input type="checkbox" id="debug-mode" />
+          </label>
+        </section>
+
+        <section class="options__card">
+          <h2>Tampilan</h2>
+          <label class="options__field">
+            <span>Tema</span>
+            <select id="theme">
+              <option value="system">Ikuti sistem</option>
+              <option value="light">Terang</option>
+              <option value="dark">Gelap</option>
+            </select>
+          </label>
+          <label class="options__field">
+            <span>Mode ringkas</span>
+            <input type="checkbox" id="compact-mode" />
+          </label>
+          <label class="options__field">
+            <span>Kontras tinggi</span>
+            <input type="checkbox" id="high-contrast" />
+          </label>
+        </section>
+
+        <section class="options__card">
+          <h2>Kehadiran</h2>
+          <label class="options__field">
+            <span>Batas kehadiran estimasi (%)</span>
+            <input type="number" id="attendance-threshold" min="0" max="100" step="1" />
+          </label>
+          <p class="options__hint">
+            Nilai ini adalah estimasi lokal sampai aturan resmi Unand tervalidasi. Bukan batas resmi.
+          </p>
+          <label class="options__field">
+            <span>Ingat filter laporan absensi terakhir</span>
+            <input type="checkbox" id="remember-filter" />
+          </label>
+        </section>
+
+        <section class="options__card">
+          <h2>Privasi & data</h2>
+          <p class="options__hint">
+            SIAKAD-X tidak menyimpan password, token, cookie, QR, atau koordinat.
+            Cache hanya berisi ringkasan akademik non-sensitif.
+          </p>
+          <div class="options__actions">
+            <button type="button" id="btn-clear-cache" class="options__btn options__btn--ghost">
+              Hapus cache
+            </button>
+            <button type="button" id="btn-clear-all" class="options__btn options__btn--danger">
+              Hapus semua data lokal
+            </button>
+          </div>
+          <p id="privacy-message" class="options__message" hidden></p>
+        </section>
+
+        <section class="options__card">
+          <h2>Tentang</h2>
+          <p class="options__hint">
+            SIAKAD-X adalah lapisan peningkatan antarmuka di atas portal resmi Unand.
+            Tidak mengganti backend, autentikasi, atau domain kampus.
+          </p>
+          <p class="options__hint">Versi 0.2.0 · Manifest V3</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

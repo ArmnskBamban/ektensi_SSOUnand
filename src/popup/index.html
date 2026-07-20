@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SIAKAD-X</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <header class="popup__header">
+        <h1 class="popup__title">SIAKAD-X</h1>
+        <p class="popup__subtitle">Universitas Andalas</p>
+      </header>
+
+      <section class="popup__section">
+        <div class="popup__row">
+          <span class="popup__label">Status</span>
+          <span id="status-badge" class="popup__badge popup__badge--idle"
+            >Memuat…</span
+          >
+        </div>
+        <div class="popup__row">
+          <span class="popup__label">Portal</span>
+          <span id="portal-status" class="popup__value">—</span>
+        </div>
+      </section>
+
+      <section class="popup__section">
+        <label class="popup__toggle">
+          <input type="checkbox" id="enabled-toggle" />
+          <span>Aktifkan SIAKAD-X</span>
+        </label>
+      </section>
+
+      <section class="popup__actions">
+        <button type="button" id="btn-options" class="popup__btn">
+          Pengaturan
+        </button>
+        <button type="button" id="btn-reload" class="popup__btn popup__btn--ghost">
+          Muat ulang
+        </button>
+      </section>
+
+      <footer class="popup__footer">
+        <span>v0.2.0 · Data diproses secara lokal</span>
+      </footer>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
